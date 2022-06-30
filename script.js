@@ -19,7 +19,7 @@ function displayData() {
      </div>
      `;
   }
-  document.getElementById('tdBody').innerHTML = bookList;
+  document.getElementById('listBook').innerHTML = bookList;
 }
 class Book {
   constructor(title, author) {
@@ -69,6 +69,44 @@ if (JSON.parse(localStorage.getItem('bookLists')) != null) {
 }
 function clearForm() {
   const clearForms = new Book();
-  clearForms.clearForm();
+  for (let i = 0; i < clearForm.length; i += 1) {
+    clearForm[i].value = '';
+    clearForms.clearForm();
+  }
 }
 clearForm();
+
+function displayDate() {
+  document.getElementById('date').innerHTML = Date();
+}
+
+displayDate();
+
+displayData();
+
+function displayList() {
+  document.getElementById('titleLibrary').className = 'title';
+  document.getElementById('listBook').className = 'library';
+  document.getElementById('contactBook').className = 'hiddenContactBook';
+  document.getElementById('addBook').className = 'hiddenAddBook';
+}
+
+document.getElementById('list').onclick = displayList;
+
+function displayBookForm() {
+  document.getElementById('titleLibrary').className = 'hiddenTitle';
+  document.getElementById('listBook').className = 'hiddelibrary ';
+  document.getElementById('contactBook').className = 'hiddenContactBook';
+  document.getElementById('addBook').className = 'addBook';
+}
+
+document.getElementById('bookform').onclick = displayBookForm;
+
+function displayContact() {
+  document.getElementById('titleLibrary').className = 'hiddenTitle';
+  document.getElementById('listBook').className = 'hiddelibrary ';
+  document.getElementById('contactBook').className = 'contactBook';
+  document.getElementById('addBook').className = 'hiddenAddBook';
+}
+
+document.getElementById('contact').onclick = displayContact;
