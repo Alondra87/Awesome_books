@@ -137,8 +137,9 @@ a:hover {
 }
 
 .footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   margin: 2%;
+  padding-top: 10%;
   font-weight: 600;
 }
