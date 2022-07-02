@@ -1,4 +1,5 @@
 import { displayList, displayBookForm, displayContact } from './toolbar.js';
+import displayDate from './date.js';
 
 const bookTitle = document.getElementById('bookTilte');
 const bookAuthor = document.getElementById('bookAuthor');
@@ -64,6 +65,7 @@ function deleteBook() {
   const dBook = new Book();
   dBook.deleteBook();
 }
+
 if (JSON.parse(localStorage.getItem('bookLists')) != null) {
   books = JSON.parse(localStorage.getItem('bookLists'));
   displayData();
@@ -78,10 +80,6 @@ function clearForm() {
   }
 }
 clearForm();
-
-function displayDate() {
-  document.getElementById('date').innerHTML = Date();
-}
 
 displayDate();
 
