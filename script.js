@@ -1,9 +1,11 @@
+import { displayList, displayBookForm, displayContact } from './toolbar.js';
+
 const bookTitle = document.getElementById('bookTilte');
 const bookAuthor = document.getElementById('bookAuthor');
 const btnAdd = document.getElementById('Add');
 const formControl = document.getElementsByClassName('form-control');
 let books = [];
-function displayData() {
+const displayData = () => {
   let bookList = '';
   for (let i = 0; i < books.length; i += 1) {
     bookList += `<div class="book">
@@ -20,7 +22,7 @@ function displayData() {
      `;
   }
   document.getElementById('listBook').innerHTML = bookList;
-}
+};
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -85,29 +87,8 @@ displayDate();
 
 displayData();
 
-function displayList() {
-  document.getElementById('titleLibrary').className = 'title';
-  document.getElementById('listBook').className = 'library';
-  document.getElementById('contactBook').className = 'hiddenContactBook';
-  document.getElementById('addBook').className = 'hiddenAddBook';
-}
-
 document.getElementById('list').onclick = displayList;
 
-function displayBookForm() {
-  document.getElementById('titleLibrary').className = 'hiddenTitle';
-  document.getElementById('listBook').className = 'hiddelibrary ';
-  document.getElementById('contactBook').className = 'hiddenContactBook';
-  document.getElementById('addBook').className = 'addBook';
-}
-
 document.getElementById('bookform').onclick = displayBookForm;
-
-function displayContact() {
-  document.getElementById('titleLibrary').className = 'hiddenTitle';
-  document.getElementById('listBook').className = 'hiddelibrary ';
-  document.getElementById('contactBook').className = 'contactBook';
-  document.getElementById('addBook').className = 'hiddenAddBook';
-}
 
 document.getElementById('contact').onclick = displayContact;
