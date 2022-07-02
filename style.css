@@ -139,7 +139,9 @@ a:hover {
 .footer {
   position: relative;
   bottom: 0;
-  margin: 2%;
-  padding-top: 10%;
+  margin-top: 5%;
+  color: #aaa;
+  padding: 2%;
   font-weight: 600;
+  background-color: #343a40;
 }
