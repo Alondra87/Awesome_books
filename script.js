@@ -14,8 +14,8 @@ function displayData() {
       <td>
       ${books[i].author}</td></div>
       <div>
-      <td><button onClick="deleteBook(${i})" class="remove">Remove</button>
-      </td></div>
+      <button onClick="deleteBook(${i})" class="remove">Remove</button>
+    </div>
      </div>
      `;
   }
@@ -57,6 +57,7 @@ btnAdd.addEventListener('click', () => {
   addBook.add();
   displayData();
 });
+
 function deleteBook() {
   const dBook = new Book();
   dBook.deleteBook();

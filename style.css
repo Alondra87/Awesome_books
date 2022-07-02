@@ -43,23 +43,26 @@ input {
 }
 
 .book:nth-child(odd) {
-  background-color: grey;
+  background-color: #aaa;
   color: #fff;
 }
 
 .remove {
   padding: 5px;
-  background-color: #ff7851;
-  color: #f6f6f6;
-  border: none;
+  background-color: #f3969a;
+  color: #fff;
+  border-radius: 5px;
+  border-color: #f3969a;
 }
 
 .add {
   margin-left: 325px;
   width: 60px;
+  height: 30px;
   background-color: #56cc9d;
   color: #f6f6f6;
   border: none;
+  border-radius: 5px;
 }
 
 .hiddenTitle {
@@ -89,13 +92,17 @@ input {
 .contactBook {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.contact-text {
   text-align: left;
-  margin-left: 40%;
 }
 
 .contact-list {
   margin: 10px;
   padding: 10px;
+  text-align: left;
 }
 
 .hiddenContactBook {
@@ -106,7 +113,7 @@ input {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #272a32;
+  background-color: #343a40;
   color: #fff;
   padding: 2%;
 }
