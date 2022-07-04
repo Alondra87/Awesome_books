@@ -1,3 +1,4 @@
+import displayData from './displayBook.js';
 import { displayList, displayBookForm, displayContact } from './toolbar.js';
 import displayDate from './date.js';
 
@@ -5,25 +6,8 @@ const bookTitle = document.getElementById('bookTilte');
 const bookAuthor = document.getElementById('bookAuthor');
 const btnAdd = document.getElementById('Add');
 const formControl = document.getElementsByClassName('form-control');
-let books = [];
-const displayData = () => {
-  let bookList = '';
-  for (let i = 0; i < books.length; i += 1) {
-    bookList += `<div class="book">
-   <div>
-    <td>${books[i].title}     
-      </td>
-      <td> by </td>
-      <td>
-      ${books[i].author}</td></div>
-      <div>
-      <button onClick="deleteBook(${i})" class="remove">Remove</button>
-    </div>
-     </div>
-     `;
-  }
-  document.getElementById('listBook').innerHTML = bookList;
-};
+
+displayData();
 class Book {
   constructor(title, author) {
     this.title = title;
