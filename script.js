@@ -1,13 +1,14 @@
-import displayData from './displayBook.js';
-import { displayList, displayBookForm, displayContact } from './toolbar.js';
-import displayDate from './date.js';
+//import displayData from './displayBook.js';
+import { displayList, displayBookForm, displayContact } from './modules/toolbar.js';
+import displayDate from './modules/date.js';
 
 const bookTitle = document.getElementById('bookTilte');
 const bookAuthor = document.getElementById('bookAuthor');
 const btnAdd = document.getElementById('Add');
 const formControl = document.getElementsByClassName('form-control');
 
-displayData();
+let books = [];
+
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -44,6 +45,26 @@ btnAdd.addEventListener('click', () => {
   addBook.add();
   displayData();
 });
+
+
+function displayData() {
+  let bookList = '';
+  for (let i = 0; i < books.length; i += 1) {
+    bookList += `<div class="book">
+ <div>
+  <td>${books[i].title}     
+    </td>
+    <td> by </td>
+    <td>
+    ${books[i].author}</td></div>
+    <div>
+    <button type="button" onClick="deleteBook(${i})" class="remove">Remove</button>
+  </div>
+   </div>
+   `;
+  }
+  document.getElementById('listBook').innerHTML = bookList;
+};
 
 function deleteBook() {
   const dBook = new Book();
